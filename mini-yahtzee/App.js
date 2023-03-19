@@ -7,7 +7,7 @@ import Gameboard from './components/Gameboard';
 import styles from './style/styles';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import Scoreboard from './components/Home';
+import Scoreboard from './components/Scoreboard';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,11 +17,13 @@ export default function App() {
 
   return (
     <NavigationContainer>
+      <Header />
       <Tab.Navigator>
-        <Tab.Screen name='Home' component={Home} />
+        <Tab.Screen name='Home' component={Home} options={{tabBarStyle: {display: 'none'}}}/>
         <Tab.Screen name='Gameboard' component={Gameboard} />
         <Tab.Screen name='Scoreboard' component={Scoreboard} />
       </Tab.Navigator>
+      
     </NavigationContainer>
   );
 }

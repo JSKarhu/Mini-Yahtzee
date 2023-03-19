@@ -64,5 +64,19 @@ export default StyleSheet.create({
   buttonText: {
     color:"#2B2B52",
     fontSize: 20
+  },
+  points: {
+    justifyContent: 'center',
+    alignContent: 'center',
+    marginTop: 15,
+    marginLeft: 10,
+    marginRight: 15,
+    textAlign: 'center',
+  },
+  dicePoints: {
+    flexDirection: 'row',
+    width: 280,
+    alignContent: 'center',
+    
   }
 });
