@@ -62,8 +62,11 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   buttonText: {
-    color:"#2B2B52",
-    fontSize: 20
+    color:"blue",
+    fontSize: 20,
+    textAlign: 'center',
+    justifyContent: 'center',
+    
   },
   points: {
     justifyContent: 'center',

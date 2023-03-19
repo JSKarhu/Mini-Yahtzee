@@ -51,6 +51,7 @@ export default Scoreboard = ({ navigation }) => {
         <Text key={i}>{i + 1}. {player.name} {player.date} {player.time} {player.points}</Text>
       ))}
       <Button title='Clear scoreboard' onPress={clearScoreboard}></Button>
+      <Footer />
     </View>
   );
 }

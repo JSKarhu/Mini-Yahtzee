@@ -20,16 +20,16 @@ export default function Home({navigation}) {
         { !hasPlayerName
         ?
         <>
-        <Text>For scoreboard enter your name</Text>
-        <TextInput onChangeText={setplayerName} autoFocus={true}></TextInput>
+        <Text style={styles.gameinfo}>For scoreboard enter your name</Text>
+        <TextInput style={styles.gameinfo} onChangeText={setplayerName} autoFocus={true}></TextInput>
         <Pressable onPress={() => handlePlayerName(playerName)}>
-            <Text>OK</Text>
+            <Text style={styles.buttonText}>OK</Text>
         </Pressable>
         </>
         :
         <>
-        <Text>Rules of the game here</Text>
-        <Text>THE GAME: Upper section of the classic Yahtzee dice game. You have 5 dices and for the every dice you have 3 throws. After each throw you can keep dices in
+        <Text style={styles.gameinfo}>Rules of the game:</Text>
+        <Text style={styles.gameinfo}>THE GAME: Upper section of the classic Yahtzee dice game. You have 5 dices and for the every dice you have 3 throws. After each throw you can keep dices in
         order to get same dice spot counts as many as
         possible. In the end of the turn you must select
         your points from 1 to 6.
@@ -44,12 +44,13 @@ export default function Home({navigation}) {
         63 points is the limit of
         getting bonus which gives you 50
         points more.</Text>
-        <Text>Good luck, {playerName}</Text>
+        <Text style={styles.gameinfo}>Good luck, {playerName}</Text>
         <Pressable onPress={() => navigation.navigate('Gameboard', {player: playerName})}>
-            <Text>PLAY</Text>
+            <Text style={styles.buttonText}>PLAY</Text>
         </Pressable>
         </>
         }
+        <Footer />
     </View>
   )
 }

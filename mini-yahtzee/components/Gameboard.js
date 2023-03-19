@@ -164,14 +164,14 @@ export default Gameboard = ({route}) => {
 
     function checkWinner() {
         if (board.every((val, i, arr) => val === arr[0]) && nbrOfThrowsLeft > 0) {
-          setStatus('You won');
+          setStatus('Yahtzee!');
         }
         else if (board.every((val, i, arr) => val === arr[0]) && nbrOfThrowsLeft === 0) {
-          setStatus('You won, game over');
+          setStatus('No more throws');
           setSelectedDices(new Array(NBR_OF_DICES).fill(false));
         }
         else if (nbrOfThrowsLeft === 0) {
-          setStatus('Game over');
+          setStatus('No more throws');
           setSelectedDices(new Array(NBR_OF_DICES).fill(false));
         }
         else {
