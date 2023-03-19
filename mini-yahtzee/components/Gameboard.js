@@ -28,8 +28,14 @@ export default Gameboard = ({route}) => {
     const [dicePointsTotal, setDiceSpotsTotal] = useState(new Array(MAX_SPOT).fill(0));
     const [scores, setScores] = useState([]);
 
-  const [totalScore, setTotalScore] = useState(0);
-    
+    const [totalScore, setTotalScoreValue] = useState(0);
+
+    function setTotalScore(newTotalScore) {
+      let bonus = newTotalScore >= 63 ? 35 : 0;
+      let totalScore = newTotalScore + bonus;
+      setTotalScoreValue(totalScore);
+    }
+  
 
     const row = [];
     for (let i = 0; i < NBR_OF_DICES; i++) {
@@ -233,9 +239,10 @@ export default Gameboard = ({route}) => {
           catch (error) {
             console.log('Save error: ' + error.message);
           }
-        
-
       }
+
+      
+      
     
     return(
         <View style={styles.gameboard}>
